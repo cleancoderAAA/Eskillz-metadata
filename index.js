@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const port = process.env.PORT || 3000
 
 // set up our express app
 const app = express();
@@ -21,6 +22,6 @@ app.use(function(err,req,res,next){
 });
 
 // listen for requests
-app.listen(process.env.port || 4000, function(){
-    console.log('Ready to Go!');
+const server = app.listen(port, () => {
+  console.log('listening on port %s...', server.address().port);
 });
