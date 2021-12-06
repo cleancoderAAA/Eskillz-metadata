@@ -6,7 +6,9 @@ const port = process.env.PORT || 3000
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/eskillzTokens');
+const uri = process.env.MONGODB_URI;
+mongoose.connect(uri);
+// mongoose.connect('mongodb://localhost/eskillzTokens');
 mongoose.Promise = global.Promise;
 
 app.use(express.static('public'));
