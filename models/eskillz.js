@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const EskillzSchema = new Schema({
     tokenID: {
       type: String,
-      required: [true, 'tokenID field is required']
     },
     name: {
         type: String,
